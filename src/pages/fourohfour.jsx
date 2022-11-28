@@ -1,7 +1,7 @@
 const FourOhFour = () => {
   return (
     <section>
-      <h1>404</h1>
+      <h1>Oops, page not found!</h1>
     </section>
   );
 };

@@ -38,3 +38,9 @@ footer {
   width: 100vw;
 }
 
+section {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
