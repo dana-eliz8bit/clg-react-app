@@ -1,0 +1,20 @@
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.footer {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-600);
+  text-transform: uppercase;
+  padding: 1rem 6rem;
+  position: absolute;
+}
+
+.footer .accent {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
