@@ -25,3 +25,7 @@ body {
   color: var(--clr-neutral-900);
   background-color: var(--clr-secondary-300);
 }
+
+main {
+  padding: 1rem 6rem;
+}

@@ -1,3 +1,40 @@
-a {
+.nav {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 5rem;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav a {
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: var(--ff-accent);
+}
+
+.nav li .active {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-900);
+  text-decoration: underline;
+}
+
+.nav li:hover {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
 }
