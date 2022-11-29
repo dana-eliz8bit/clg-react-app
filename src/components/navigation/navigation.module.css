@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
-  padding: 0 4rem;
+  padding: 0 4.5rem;
 }
 
 .nav ul {
@@ -20,7 +20,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .title {

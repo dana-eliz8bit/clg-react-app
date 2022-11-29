@@ -29,12 +29,6 @@ body {
 main,
 footer {
   padding: 1rem 5rem;
-}
-
-footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100vw;
 }
 
@@ -44,3 +38,6 @@ section {
   border-radius: 5px;
 }
 
+p {
+  margin-top: .5rem;
+}

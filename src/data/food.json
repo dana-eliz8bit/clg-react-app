@@ -1,0 +1,25 @@
+{
+  "food": [
+    {
+      "title": "Acai Bowl",
+      "image": "https://images.unsplash.com/photo-1590301157284-ab2f8707bdc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+      "description": "A thick smoothie in a bowl made with acai berry and fruit.. and garnished with a variety of colorful and tasty toppings.",
+      "rating": "5",
+      "haveTried": true
+    },
+    {
+      "title": "Avocado Toast",
+      "image": "https://images.unsplash.com/photo-1633204339698-5353c80c9046?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "description": "Creamy avocado on whole grain toast .. and garnished with a variety of colorful and tasty toppings.",
+      "rating": "5",
+      "haveTried": true
+    },
+    {
+      "title": "Kale Salad",
+      "image": "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+      "description": "A bowl of shredded kale with a creamy cashew or tahini dressing ..and garnished with a variety of colorful and tasty toppings.",
+      "rating": "",
+      "haveTried": false
+    }
+  ]
+}

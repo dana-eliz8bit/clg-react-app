@@ -1,6 +1,6 @@
 const Todo = () => {
   return (
-    <section>
+    <section >
       <h2>To Do</h2>
     </section>
   );

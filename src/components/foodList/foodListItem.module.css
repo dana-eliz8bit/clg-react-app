@@ -1,0 +1,29 @@
+img {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 1rem 0;
+}
+
+.accent {
+  font-family: var(--ff-accent);
+  color: var(--clr-primary-600);
+  text-transform: uppercase;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  margin: 10px;
+  padding: 10px;
+}
+
+.flex-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
