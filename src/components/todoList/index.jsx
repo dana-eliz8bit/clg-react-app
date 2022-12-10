@@ -41,7 +41,7 @@ const TodoList = () => {
     // Step 15 - Sieving through the todos to return only completed todos
     let mapped = todos.map((task) => {
       return task.id === Number(id)
-        ? { ...task, isCompleted: true }
+        ? { ...task, isCompleted: !task.isCompleted }
         : { ...task };
     });
     // Set new ToDo list with updated variables
@@ -87,7 +87,7 @@ const TodoList = () => {
             {todos.map((t, index) => {
               return (
                 <div id={t.id} key={index + t.id} value={t.id}>
-                  {t.isCompleted ? (
+                  {/* {t.isCompleted ? (
                     <strike>
                       <p>{t.taskDescription}</p>
                     </strike>
@@ -105,14 +105,14 @@ const TodoList = () => {
                     //     Complete
                     //   </button>
                     // </>
-                    // Step 23 - Replace code and insert checkbox component //
-                    <Checkbox
-                      label={t.taskDescription}
-                      value={t.id}
-                      checked={t.isCompleted}
-                      onChange={(e) => handleToggle(t.id)}
-                    />
-                  )}
+                    // Step 23 - Replace code and insert checkbox component // */}
+                  <Checkbox
+                    label={t.taskDescription}
+                    value={t.id}
+                    checked={t.isCompleted}
+                    onChange={(e) => handleToggle(t.id)}
+                  />
+                  {/* )} */}
                 </div>
               );
             })}

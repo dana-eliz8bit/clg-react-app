@@ -1,17 +1,22 @@
-import classes from "./checkbox.module.css"
+import classes from "./checkbox.module.css";
 
 // Step 21 - Create new UI component
 const Checkbox = ({ label, value, checked, onChange }) => {
   return (
-    <label>
+    <label className={classes.checkboxLabel}>
       <input
         type="checkbox"
-        className={classes.input}
         checked={checked}
         value={value}
         onChange={onChange}
       />
-      {label}
+      {checked ? (
+        <p className={classes.checkboxLabelText}>
+          <strike>{label}</strike>
+        </p>
+      ) : (
+        <p className={classes.checkboxLabelText}>{label}</p>
+      )}
     </label>
   );
 };
