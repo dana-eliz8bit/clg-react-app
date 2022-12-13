@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import { useContext } from "react";
 import "./App.css";
 
 import Navigation from "./components/navigation";
@@ -12,7 +13,13 @@ import Contact from "./pages/contact";
 import FourOhFour from "./pages/fourohfour";
 import Footer from "./components/footer";
 
+import { ThemeContext } from "./theme/themeProvider";
+
 function App() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.darkMode;
+  console.log(darkMode);
+
   return (
     <div>
       <Navigation />
