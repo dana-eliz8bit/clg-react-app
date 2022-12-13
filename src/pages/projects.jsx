@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
+import { useRouteMatch, Link } from "react-router-dom";
 
 const Projects = () => {
+  const { url } = useRouteMatch();
+
   return (
     <section>
       <h1>Projects</h1>
       <div>
-        <Link to="/projects/foodgallery">Food Gallery</Link>
+        <Link to={`${url}/foodgallery`}>Food Gallery</Link>
       </div>
       <div>
-        <Link to="/projects/todo">To Do List</Link>
+        <Link to={`${url}/todo`}>To Do List</Link>
+      </div>
+      <div>
+        <Link to={`${url}/books`}>Books</Link>
       </div>
     </section>
   );

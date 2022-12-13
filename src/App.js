@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Projects from "./pages/projects";
 import FoodGallery from "./pages/projects/foodgallery";
 import Todo from "./pages/projects/todo";
+// import Book from "./pages/projects/book";
 import Contact from "./pages/contact";
 import FourOhFour from "./pages/fourohfour";
 import Footer from "./components/footer";
@@ -32,6 +33,9 @@ function App() {
           <Route exact path="/projects/todo">
             <Todo />
           </Route>
+          {/* <Route exact path="/projects/books">
+            <Book />
+          </Route> */}
           <Route exact path="/contact">
             <Contact />
           </Route>
