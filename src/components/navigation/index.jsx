@@ -34,6 +34,10 @@ function Navigation() {
       <ToggleSwitch
         isOn={darkMode}
         handleToggle={() => theme.setDarkMode(!darkMode)}
+        leftAriaLabel="toggle dark mode"
+        leftEmoji={<>&#127769;</>}
+        rightAriaLabel="toggle light mode"
+        rightEmoji={<>&#127774;</>}
       ></ToggleSwitch>
     </nav>
   );
