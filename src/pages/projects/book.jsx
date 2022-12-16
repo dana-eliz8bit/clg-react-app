@@ -57,8 +57,13 @@ const Book = () => {
 
   return (
     <section>
-      <h1>Book Search</h1>
-      <input type="text" value={searchText} onChange={searchTextHandler} />
+      <h1>Book List</h1>
+      <input
+        type="text"
+        placeholder="Enter author name.."
+        value={searchText}
+        onChange={searchTextHandler}
+      />
       <BooksButton onClick={fetchBooksHandler}>Search</BooksButton>
       {content}
     </section>

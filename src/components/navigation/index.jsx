@@ -45,20 +45,18 @@ function Navigation() {
             rightEmoji={<>&#127774;</>}
           ></ToggleSwitch>
         </li>
-        <li>
+        <>
           {isLoggedIn && (
             <AvatarButton onClick={() => history.push("/profile")}>
               {/* Settings */}
             </AvatarButton>
           )}
-        </li>
-        <li>
           {!isLoggedIn && (
             <BooksButton onClick={() => history.push("/login")}>
               Sign In
             </BooksButton>
           )}
-        </li>
+        </>
       </ul>
     </nav>
   );
