@@ -5,6 +5,7 @@ import ToggleSwitch from "../toggleSwitch";
 import { ThemeContext } from "../../theme/themeProvider";
 import AuthContext from "../../auth/auth-context";
 import BooksButton from "../booksButton";
+import AvatarButton from "../avatarButton";
 
 function Navigation() {
   const theme = useContext(ThemeContext);
@@ -46,9 +47,9 @@ function Navigation() {
         </li>
         <li>
           {isLoggedIn && (
-            <BooksButton onClick={() => history.push("/profile")}>
-              Settings
-            </BooksButton>
+            <AvatarButton onClick={() => history.push("/profile")}>
+              {/* Settings */}
+            </AvatarButton>
           )}
         </li>
         <li>
