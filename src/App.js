@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./App.css";
 
 import Navigation from "./components/navigation";
@@ -14,45 +14,80 @@ import FourOhFour from "./pages/fourohfour";
 import Footer from "./components/footer";
 
 import { ThemeContext } from "./theme/themeProvider";
+import AuthContext from "./auth/auth-context";
 
 function App() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.darkMode;
   console.log(darkMode);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
+
+    if (storedUserLoggedInInformation === "1") {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const loginHandler = (email, password, name) => {
+    localStorage.setItem("isLoggedIn", "1");
+    setIsLoggedIn(true);
+    setName(name);
+    setEmail(email);
+  };
+
+  const logoutHandler = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div className={darkMode ? "dark-theme" : ""}>
-      <Navigation />
-      <main>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/projects">
-            <Projects />
-          </Route>
-          <Route exact path="/projects/foodgallery">
-            <FoodGallery />
-          </Route>
-          <Route exact path="/projects/todo">
-            <Todo />
-          </Route>
-          <Route exact path="/projects/books">
-            <Book />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-          <Route path="*">
-            <FourOhFour />
-          </Route>
-        </Switch>
-      </main>
-      <Footer />
-    </div>
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+        name: name,
+        email: email,
+        onLogin: loginHandler,
+        onLogout: logoutHandler,
+      }}
+    >
+      <div className={darkMode ? "dark-theme" : ""}>
+        <Navigation />
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/projects">
+              <Projects />
+            </Route>
+            <Route exact path="/projects/foodgallery">
+              <FoodGallery />
+            </Route>
+            <Route exact path="/projects/todo">
+              <Todo />
+            </Route>
+            <Route exact path="/projects/books">
+              <Book />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            <Route path="*">
+              <FourOhFour />
+            </Route>
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </AuthContext.Provider>
   );
 }
 

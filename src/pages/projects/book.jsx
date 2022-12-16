@@ -7,14 +7,20 @@ const Book = () => {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
+
+  const searchTextHandler = (event) => {
+    setSearchText(event.target.value);
+  };
 
   const fetchBooksHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
       const response = await fetch(
-        "https://openlibrary.org/authors/OL1394023A/works.json?limit=10"
+        `https://openlibrary.org/search.json?author=${searchText}`
       );
+      console.log(response);
       if (response.status === 404) {
         setError(true);
         console.log(response);
@@ -22,18 +28,18 @@ const Book = () => {
       }
       const data = await response.json();
       console.log({ data });
-      const transformedBooks = data.entries.map((bookData, index) => {
+      const transformedData = data.docs.map((bookData, index) => {
         return {
           key: bookData.key,
           name: bookData.title,
         };
       });
-      setBooks(transformedBooks);
+      setBooks(transformedData);
     } catch (error) {
       setError(error.message);
     }
     setIsLoading(false);
-  }, []);
+  }, [searchText]);
 
   let content = <p>No books found</p>;
 
@@ -51,10 +57,9 @@ const Book = () => {
 
   return (
     <section>
-      <h1>Books by Gabrielle Zevin</h1>
-      <BooksButton onClick={fetchBooksHandler}>
-        Search
-      </BooksButton>
+      <h1>Book Search</h1>
+      <input type="text" value={searchText} onChange={searchTextHandler} />
+      <BooksButton onClick={fetchBooksHandler}>Search</BooksButton>
       {content}
     </section>
   );
