@@ -105,11 +105,7 @@ const Login = () => {
   };
 
   return (
-    <section
-      style={{
-        height: "100vh"
-      }}
-    >
+    <section>
       <form onSubmit={submitHandler}>
         <h1>Sign In</h1>
         <div

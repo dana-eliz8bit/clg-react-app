@@ -45,6 +45,13 @@ function Navigation() {
           ></ToggleSwitch>
         </li>
         <li>
+          {isLoggedIn && (
+            <BooksButton onClick={() => history.push("/profile")}>
+              Settings
+            </BooksButton>
+          )}
+        </li>
+        <li>
           {!isLoggedIn && (
             <BooksButton onClick={() => history.push("/login")}>
               Sign In
