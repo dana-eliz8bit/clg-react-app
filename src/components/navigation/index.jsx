@@ -1,13 +1,17 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import classes from "./navigation.module.css";
 import ToggleSwitch from "../toggleSwitch";
 import { ThemeContext } from "../../theme/themeProvider";
+import AuthContext from "../../auth/auth-context";
+import BooksButton from "../booksButton";
 
 function Navigation() {
   const theme = useContext(ThemeContext);
   const darkMode = theme.darkMode;
   console.log(darkMode);
+  const { isLoggedIn } = useContext(AuthContext);
+  let history = useHistory();
 
   return (
     <nav className={classes.nav}>
@@ -30,15 +34,24 @@ function Navigation() {
             Contact
           </NavLink>
         </li>
+        <li>
+          <ToggleSwitch
+            isOn={darkMode}
+            handleToggle={() => theme.setDarkMode(!darkMode)}
+            leftAriaLabel="toggle dark mode"
+            leftEmoji={<>&#127769;</>}
+            rightAriaLabel="toggle light mode"
+            rightEmoji={<>&#127774;</>}
+          ></ToggleSwitch>
+        </li>
+        <li>
+          {!isLoggedIn && (
+            <BooksButton onClick={() => history.push("/login")}>
+              Sign In
+            </BooksButton>
+          )}
+        </li>
       </ul>
-      <ToggleSwitch
-        isOn={darkMode}
-        handleToggle={() => theme.setDarkMode(!darkMode)}
-        leftAriaLabel="toggle dark mode"
-        leftEmoji={<>&#127769;</>}
-        rightAriaLabel="toggle light mode"
-        rightEmoji={<>&#127774;</>}
-      ></ToggleSwitch>
     </nav>
   );
 }

@@ -15,6 +15,7 @@ import Footer from "./components/footer";
 
 import { ThemeContext } from "./theme/themeProvider";
 import AuthContext from "./auth/auth-context";
+import Login from "./pages/login";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -80,6 +81,11 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
+            {!isLoggedIn && (
+              <Route exact path={`/login`}>
+                <Login />
+              </Route>
+            )}
             <Route path="*">
               <FourOhFour />
             </Route>
