@@ -20,7 +20,7 @@ function ContactForm() {
   const [message, setMessage] = useState("");
 
   function validateForm() {
-    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
     if (!email.match(emailRegex) || email.length < 3 || name.length < 1)
       setIsValid(false);
     else {
@@ -32,22 +32,26 @@ function ContactForm() {
       {/* <h2>Let's keep in touch!</h2> */}
       <form className={classes.form}>
         <div className={classes["flex-group"]}>
-          <label >
+          <label>
             Name
-            <input className={classes["form-control"]} type="text" onChange={(e) => setName(e.target.value)} />
+            <input
+              className={classes["form-control"]}
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+            />
           </label>
           <label>
             Email
             <input
               type="email"
-              className={classes["form-control"]} 
+              className={classes["form-control"]}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
             />
           </label>
         </div>
-        <label >What would you like to chat about?</label>
+        <label>What would you like to chat about?</label>
         <select
           className={classes["form-control"]}
           value={selectedService}

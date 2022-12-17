@@ -1,10 +1,12 @@
-import Button from "../button";
+// import Button from "../button";
 import classes from "./foodListItem.module.css";
 
 function FoodListItem(props) {
   return (
     <div className={classes["list-item"]}>
-      {!props.foodData.haveTried && <h3 className={classes.accent}>Must try!</h3>}
+      {!props.foodData.haveTried && (
+        <h3 className={classes.accent}>Must try!</h3>
+      )}
       <img src={props.foodData.image} alt={props.foodData.title} />
       <h3>
         {props.foodData.title} | {""}
