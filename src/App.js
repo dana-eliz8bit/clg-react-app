@@ -6,7 +6,7 @@ import Navigation from "./components/navigation";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Projects from "./pages/projects";
-import FoodGallery from "./pages/projects/foodgallery";
+import FoodGallery from "./pages/projects/foodGallery";
 import Todo from "./pages/projects/todo";
 import Book from "./pages/projects/book";
 import Contact from "./pages/contact";
@@ -73,7 +73,7 @@ function App() {
             <Route exact path="/projects">
               <Projects />
             </Route>
-            <Route exact path="/projects/foodgallery">
+            <Route exact path="/projects/foodGallery">
               <FoodGallery />
             </Route>
             <Route exact path="/projects/todo">
